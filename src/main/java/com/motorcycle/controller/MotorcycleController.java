@@ -1,20 +1,16 @@
 package com.motorcycle.controller;
 
 import com.motorcycle.entity.Motorcycle;
-import com.motorcycle.repository.CaracteristiciMotocycleRepository;
-import com.motorcycle.service.CaracteristiciMotorcycleService;
-import org.springframework.http.HttpStatus;
+import com.motorcycle.service.MotorcycleService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/caracteristiciMotorcycle")
-public class CaracteristiciMotorcycleController {
-    private final CaracteristiciMotorcycleService caracteristiciMotorcycleService;
+public class MotorcycleController {
+    private final MotorcycleService caracteristiciMotorcycleService;
 
-    public CaracteristiciMotorcycleController(CaracteristiciMotorcycleService caracteristiciMotorcycleService) {
+    public MotorcycleController(MotorcycleService caracteristiciMotorcycleService) {
         this.caracteristiciMotorcycleService = caracteristiciMotorcycleService;
     }
 
