@@ -3,6 +3,8 @@ package com.motorcycle.entity;
 import com.motorcycle.utils.CategoryMotorcycle;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 public class Motorcycle {
     @Id
@@ -14,7 +16,24 @@ public class Motorcycle {
     private int yearOfManufacture;
     private int motorCapacity;
     private boolean abs;
+    private LocalDate localDate;
+    private LocalDate countDays;
 
+    public LocalDate getCountDays() {
+        return countDays;
+    }
+
+    public void setCountDays(LocalDate countDays) {
+        this.countDays =countDays;
+    }
+
+    public LocalDate getLocalDate() {
+        return localDate;
+    }
+
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
+    }
 
 //    @OneToMany(mappedBy = "motorcycle", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //    private Set<BestSellers> bestSellersSet;
