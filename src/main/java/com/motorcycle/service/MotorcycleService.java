@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MotorcycleService {
 
-    private CaracteristiciMotocycleRepository caracteristiciMotocycleRepository;
+    private final CaracteristiciMotocycleRepository caracteristiciMotocycleRepository;
 
     public MotorcycleService(CaracteristiciMotocycleRepository caracteristiciMotocycleRepository) {
         this.caracteristiciMotocycleRepository = caracteristiciMotocycleRepository;
