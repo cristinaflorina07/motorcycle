@@ -3,7 +3,7 @@ package com.motorcycle.entity;
 import jakarta.persistence.*;
 
 @Entity
-public class InregistrareUser {
+public class RegisterUser {
     @Id
     @GeneratedValue
    private Long Id;

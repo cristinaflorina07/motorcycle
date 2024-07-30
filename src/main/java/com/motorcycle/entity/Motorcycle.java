@@ -2,6 +2,7 @@ package com.motorcycle.entity;
 
 import com.motorcycle.utils.CategoryMotorcycle;
 import jakarta.persistence.*;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.time.LocalDate;
 
@@ -11,28 +12,29 @@ public class Motorcycle {
     @GeneratedValue(strategy = GenerationType.AUTO)
 //    @Enumerated(EnumType.STRING)
     private Long id;
+
     private CategoryMotorcycle categoryMotorcycle;
     private String model;
     private int yearOfManufacture;
     private int motorCapacity;
     private boolean abs;
-    private LocalDate localDate;
-    private LocalDate countDays;
+    private LocalDate registerDate;
+    private int countDays;
 
-    public LocalDate getCountDays() {
+    public int getCountDays() {
         return countDays;
     }
 
-    public void setCountDays(LocalDate countDays) {
-        this.countDays =countDays;
+    public void setCountDays(int countDays) {
+        this.countDays = countDays;
     }
 
-    public LocalDate getLocalDate() {
-        return localDate;
+    public LocalDate getRegisterDate() {
+        return registerDate;
     }
 
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
+    public void setRegisterDate(LocalDate registerDate) {
+        this.registerDate = registerDate;
     }
 
 //    @OneToMany(mappedBy = "motorcycle", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

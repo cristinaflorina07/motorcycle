@@ -5,23 +5,24 @@ import com.motorcycle.service.MotorcycleService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/caracteristiciMotorcycle")
+@RequestMapping("/moto")
 public class MotorcycleController {
-    private final MotorcycleService caracteristiciMotorcycleService;
+    private final MotorcycleService motorcycleService;
 
-    public MotorcycleController(MotorcycleService caracteristiciMotorcycleService) {
-        this.caracteristiciMotorcycleService = caracteristiciMotorcycleService;
+    public MotorcycleController(MotorcycleService motorcycleService) {
+        this.motorcycleService = motorcycleService;
     }
 
-    @PostMapping("/introducere")
-    public ResponseEntity<Motorcycle> addCaracteristiciMotorcycle(@RequestBody Motorcycle caracteristiciMotorcycle) {
-        return caracteristiciMotorcycleService.addCaracteristiciMotorcycle(caracteristiciMotorcycle);
+    @PostMapping("/addmoto")
+    public ResponseEntity<Motorcycle> addMotorcycle(@RequestBody Motorcycle motorcycle) {
+        return motorcycleService.addCaracteristiciMotorcycle(motorcycle);
     }
 
-//    @GetMapping("/get")
-//    public List<Motorcycle> getCaracteristiciMotorcycle() {
-//        return caracteristiciMotocycleRepository.findAll();
-
+    @GetMapping("/all")
+    public List<Motorcycle> getCaracteristiciMotorcycle() {
+        return motorcycleService.getAllMotorcycle();
     }
-//}
+}
