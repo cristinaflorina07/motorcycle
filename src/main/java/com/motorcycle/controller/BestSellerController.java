@@ -10,10 +10,10 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/bestSellers")
-public class BestSallersController {
+public class BestSellerController {
     private final BestSellersService bestSellersService;
 
-    public BestSallersController(BestSellersService bestSellersService) {
+    public BestSellerController(BestSellersService bestSellersService) {
         this.bestSellersService = bestSellersService;
     }
 
