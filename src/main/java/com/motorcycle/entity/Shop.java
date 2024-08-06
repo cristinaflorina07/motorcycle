@@ -3,6 +3,8 @@ package com.motorcycle.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,8 +22,11 @@ public class Shop {
     private String descriptions;
     private double power;
     private String fuelType;
-    private String motorcycle;
-    private String car;
+
+    @Transient
+    private Motorcycle motorcycle;
+
+
 
 
 }
