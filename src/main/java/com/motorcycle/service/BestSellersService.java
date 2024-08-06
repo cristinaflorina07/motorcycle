@@ -1,14 +1,11 @@
 package com.motorcycle.service;
 
 import com.motorcycle.entity.BestSellers;
-import com.motorcycle.entity.Motorcycle;
 import com.motorcycle.repository.BestSellersRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Service
 public class BestSellersService {
@@ -27,11 +24,11 @@ public class BestSellersService {
         return bestSellersRepository.save(bestSellers);
     }
 
-    public Optional<BestSellers> findBestSellersBy(Long id) {
+    public Optional<BestSellers> findBestSellersById(Long id) {
         return bestSellersRepository.findById(id);
     }
 
-    public void deleteById(Long id){
+    public void deleteById(Long id) {
 
         bestSellersRepository.deleteById(id);
     }

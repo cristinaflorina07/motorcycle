@@ -9,18 +9,18 @@ import java.util.List;
 @Service
 public class RegisterService {
 
-    private final RegisterUserRepository inregistrareRepository;
+    private final RegisterUserRepository registerUserRepository;
 
-    public RegisterService(RegisterUserRepository inregistrareRepository) {
-        this.inregistrareRepository = inregistrareRepository;
+    public RegisterService(RegisterUserRepository registerUserRepository) {
+        this.registerUserRepository = registerUserRepository;
     }
 
-    public RegisterUser addInregistrare(RegisterUser inregistrare) {
-        return inregistrareRepository.save(inregistrare);
+    public RegisterUser addNewUser(RegisterUser registerUser) {
+        return registerUserRepository.save(registerUser);
 
     }
 
-    public List<RegisterUser> findInregistrareaby() {
-        return inregistrareRepository.findAll();
+    public List<RegisterUser> getAllUsers() {
+        return registerUserRepository.findAll();
     }
 }

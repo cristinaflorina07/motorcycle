@@ -1,7 +1,7 @@
 package com.motorcycle.service;
 
 import com.motorcycle.entity.Motorcycle;
-import com.motorcycle.repository.MotocycleRepository;
+import com.motorcycle.repository.MotorcycleRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -12,27 +12,28 @@ import java.util.Optional;
 @Service
 public class MotorcycleService {
 
-    private final MotocycleRepository motocycleRepository;
+    private final MotorcycleRepository motorcycleRepository;
 
-    public MotorcycleService(MotocycleRepository motocycleRepository) {
-        this.motocycleRepository = motocycleRepository;
-    }
-    public Optional<Motorcycle> findMotorcycleBy(Long id){
-        return motocycleRepository.findById(id);
-
+    public MotorcycleService(MotorcycleRepository motorcycleRepository) {
+        this.motorcycleRepository = motorcycleRepository;
     }
 
-    public ResponseEntity<Motorcycle> addCaracteristiciMotorcycle(Motorcycle caracteristiciMotorcycle) {
-        if (caracteristiciMotorcycle.getCategoryMotorcycle() == null) {
+    public Optional<Motorcycle> findMotorcycleById(Long id) {
+        return motorcycleRepository.findById(id);
+
+    }
+
+    public ResponseEntity<Motorcycle> addMotorcycle(Motorcycle motorcycle) {
+        if (motorcycle.getCategoryMotorcycle() == null) {
             return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
         }
-        motocycleRepository.save(caracteristiciMotorcycle);
+        motorcycleRepository.save(motorcycle);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
 
     public List<Motorcycle> getAllMotorcycle() {
-        return motocycleRepository.findAll();
+        return motorcycleRepository.findAll();
     }
 }
 

@@ -6,9 +6,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/moto")
+@RequestMapping("/motorcycle")
 public class MotorcycleController {
     private final MotorcycleService motorcycleService;
 
@@ -16,17 +17,19 @@ public class MotorcycleController {
         this.motorcycleService = motorcycleService;
     }
 
-    @PostMapping("/addmoto")
-    public ResponseEntity<Motorcycle> addMotorcycle(@RequestBody Motorcycle motorcycle) {
-        return motorcycleService.addCaracteristiciMotorcycle(motorcycle);
-    }
-
     @GetMapping("/all")
-    public List<Motorcycle> getCaracteristiciMotorcycle() {
+    public List<Motorcycle> getAllMotorcycles() {
         return motorcycleService.getAllMotorcycle();
     }
 
-//    @GetMapping
-//    public
+    @GetMapping("/find/{id}")
+    public Optional<Motorcycle> findMotorcycleById(@PathVariable Long id) {
+        return motorcycleService.findMotorcycleById(id);
+    }
+
+    @PostMapping("/addmotorcycle")
+    public ResponseEntity<Motorcycle> addMotorcycle(@RequestBody Motorcycle motorcycle) {
+        return motorcycleService.addMotorcycle(motorcycle);
+    }
 
 }

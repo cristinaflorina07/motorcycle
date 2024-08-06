@@ -7,24 +7,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/inregistrare")
+@RequestMapping("/register")
 public class RegisterController {
-    private final RegisterService inregistrareService;
+    private final RegisterService registerService;
 
-    public RegisterController(RegisterService inregistrareService) {
-        this.inregistrareService = inregistrareService;
-    }
-
-
-
-    @PostMapping("/introducere")
-    public RegisterUser addInregistrare(@RequestBody RegisterUser inregistrare) {
-        return inregistrareService.addInregistrare(inregistrare);
+    public RegisterController(RegisterService registerService) {
+        this.registerService = registerService;
     }
 
     @GetMapping("/get")
-    public List<RegisterUser> findInregistrareaby() {
+    public List<RegisterUser> getAllUsers() {
+        return registerService.getAllUsers();
+    }
 
-    return inregistrareService.findInregistrareaby();
+    @PostMapping("/add")
+    public RegisterUser addUser(@RequestBody RegisterUser registerUser) {
+        return registerService.addNewUser(registerUser);
     }
 }

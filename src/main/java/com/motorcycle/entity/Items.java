@@ -1,17 +1,15 @@
 package com.motorcycle.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Transient;
-import jakarta.transaction.Transactional;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
-public class Shop {
+public class Items {
     @Id
     @GeneratedValue
     private Long id;
@@ -23,8 +21,8 @@ public class Shop {
     private double power;
     private String fuelType;
 
-    @Transient
-    private Motorcycle motorcycle;
+    @OneToMany
+    private List<Motorcycle> motorcycle;
 
 
 
