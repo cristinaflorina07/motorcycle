@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DatingUtilsService {
@@ -23,4 +24,9 @@ public class DatingUtilsService {
         }
         motocycleRepository.saveAll(listMoto);
     }
+//    public Optional<Motorcycle> findBy(Long id){
+//        return MotocycleRepository.findById(id);
+//
+
+//    }
 }

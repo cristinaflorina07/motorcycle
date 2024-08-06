@@ -25,4 +25,8 @@ public class MotorcycleController {
     public List<Motorcycle> getCaracteristiciMotorcycle() {
         return motorcycleService.getAllMotorcycle();
     }
+
+//    @GetMapping
+//    public
+
 }
