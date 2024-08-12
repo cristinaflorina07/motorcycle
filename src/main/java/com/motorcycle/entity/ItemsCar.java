@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-public class ItemsCar extends Items{
+public class ItemsCar extends Items {
     @Id
     @GeneratedValue
     private Long id;

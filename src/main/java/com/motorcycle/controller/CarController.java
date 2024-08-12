@@ -18,9 +18,9 @@ public class CarController {
     public List<Car> getCar(){
         return carService.getCar();
     }
-//    @PostMapping
-//    public Car addCar (@RequestBody Car car ){
-//        return CarService.addCar(car);
+    @PostMapping
+    public Car addCar (@RequestBody Car car ){
+        return carService.addCar(car);
 
     }
 }
