@@ -23,6 +23,17 @@ public class Motorcycle {
     private boolean abs;
     private LocalDate registerDate;
     private int countDays;
+
+    @ManyToOne
+    @JoinColumn(name = "itemsMotorcycle_id")
+    private ItemsMotorcycle itemsMotorcycle;
+
+    public void setItemsMotorcycle(ItemsMotorcycle itemsMotorcycle) {
+        this.itemsMotorcycle = itemsMotorcycle;
+        if (itemsMotorcycle != null && !itemsMotorcycle.getMotorcycleList().contains(this)) {
+            itemsMotorcycle.getMotorcycleList().add(this);
+        }
+    }
 }
 
 

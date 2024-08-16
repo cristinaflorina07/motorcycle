@@ -1,11 +1,13 @@
 package com.motorcycle.entity;
 
+import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
 
 
 @Getter
 @Setter
+@MappedSuperclass
 public class Items {
 
     private double price;
@@ -15,9 +17,5 @@ public class Items {
     private String descriptions;
     private double power;
     private String fuelType;
-
-
-
-
 
 }
