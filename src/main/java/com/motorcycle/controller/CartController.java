@@ -5,6 +5,8 @@ import com.motorcycle.service.CartService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/cart")
 public class CartController {
@@ -20,5 +22,9 @@ public class CartController {
     @PostMapping
     public Cart addCart(@RequestBody Cart cart){
         return cartService.addCart(cart);
+    }
+    @GetMapping("/get/{id}")
+    public Optional<Cart> findCartById(@PathVariable Long id){
+        return cartService.findCartById(id);
     }
 }

@@ -5,6 +5,7 @@ import com.motorcycle.repository.CarRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CarService {
@@ -13,10 +14,16 @@ public class CarService {
     public CarService(CarRepository carRepository) {
         this.carRepository = carRepository;
     }
-    public List<Car> getCar(){
+
+    public List<Car> getCar() {
         return carRepository.findAll();
     }
-    public Car addCar(Car car){
+
+    public Car addCar(Car car) {
         return carRepository.save(car);
+    }
+
+    public Optional<Car> findCarbyId(Long id) {
+       return carRepository.findById(id);
     }
 }

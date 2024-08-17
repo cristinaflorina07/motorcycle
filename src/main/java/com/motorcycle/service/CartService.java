@@ -5,6 +5,7 @@ import com.motorcycle.repository.CartRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CartService {
@@ -19,6 +20,9 @@ public class CartService {
     }
     public List<Cart> listCart(){
         return cartRepository.findAll();
+    }
+    public Optional<Cart> findCartById(Long id){
+        return cartRepository.findById(id);
     }
 
 }

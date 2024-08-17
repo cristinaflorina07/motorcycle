@@ -1,5 +1,6 @@
 package com.motorcycle.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.motorcycle.utils.CategoryMotorcycle;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -26,6 +27,7 @@ public class Motorcycle {
 
     @ManyToOne
     @JoinColumn(name = "itemsMotorcycle_id")
+    @JsonBackReference
     private ItemsMotorcycle itemsMotorcycle;
 
     public void setItemsMotorcycle(ItemsMotorcycle itemsMotorcycle) {

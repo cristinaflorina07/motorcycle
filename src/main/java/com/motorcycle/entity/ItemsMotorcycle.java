@@ -1,5 +1,6 @@
 package com.motorcycle.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,6 +17,7 @@ public class ItemsMotorcycle extends Items {
     private Long id;
 
     @OneToMany(cascade = CascadeType.PERSIST, orphanRemoval = true)
+    @JsonManagedReference
     private List<Motorcycle> motorcycleList = new ArrayList<>();
 
     public void addMotorcycle(Motorcycle motorcycle) {
