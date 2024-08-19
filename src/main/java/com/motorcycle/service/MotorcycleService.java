@@ -35,7 +35,10 @@ public class MotorcycleService {
     public List<Motorcycle> getAllMotorcycle() {
         return motorcycleRepository.findAll();
     }
-}
+
+    }
+
+
 
 
 

@@ -5,6 +5,7 @@ import com.motorcycle.repository.ItemsCarRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ItemsCarService {
@@ -21,5 +22,8 @@ public class ItemsCarService {
 
     public List<ItemsCar> getAllItemsCar() {
        return itemsCarRepository.findAll();
+    }
+    public Optional<ItemsCar> findItemsCarById(Long id){
+        return itemsCarRepository.findById(id);
     }
 }

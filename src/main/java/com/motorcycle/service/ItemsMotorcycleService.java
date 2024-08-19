@@ -29,4 +29,8 @@ public class ItemsMotorcycleService {
     public List<ItemsMotorcycle> getAllMotorcycleItems() {
         return itemsMotorcycleRepository.findAll();
     }
+
+    public Optional<ItemsMotorcycle> findItemsMotorcycleById(Long id) {
+        return itemsMotorcycleRepository.findById(id);
+    }
 }

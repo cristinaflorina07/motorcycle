@@ -1,10 +1,12 @@
 package com.motorcycle.service;
 
+import com.motorcycle.entity.Motorcycle;
 import com.motorcycle.entity.RegisterUser;
 import com.motorcycle.repository.RegisterUserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RegisterService {
@@ -22,5 +24,9 @@ public class RegisterService {
 
     public List<RegisterUser> getAllUsers() {
         return registerUserRepository.findAll();
+    }
+
+    public Optional<RegisterUser> findRegisterUserById(Long id) {
+        return registerUserRepository.findById(id);
     }
 }

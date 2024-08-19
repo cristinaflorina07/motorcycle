@@ -6,6 +6,7 @@ import com.motorcycle.service.ItemsCarService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequestMapping("/items")
 @RestController
@@ -25,5 +26,10 @@ public class ItemsCarController {
     @PostMapping("/addcaritem")
     public ItemsCar addCarItem(@RequestBody ItemsCar itemsCar) {
         return itemsCarService.addItems(itemsCar);
+    }
+
+    @GetMapping("/get/{id}")
+    public Optional<ItemsCar> findItemsCarById(@PathVariable Long id) {
+        return itemsCarService.findItemsCarById(id);
     }
 }
