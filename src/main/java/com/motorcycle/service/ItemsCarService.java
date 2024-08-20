@@ -21,9 +21,14 @@ public class ItemsCarService {
     }
 
     public List<ItemsCar> getAllItemsCar() {
-       return itemsCarRepository.findAll();
+        return itemsCarRepository.findAll();
     }
-    public Optional<ItemsCar> findItemsCarById(Long id){
+
+    public Optional<ItemsCar> findItemsCarById(Long id) {
         return itemsCarRepository.findById(id);
+    }
+
+    public void deleteItemsCarById(Long id) {
+        itemsCarRepository.deleteById(id);
     }
 }

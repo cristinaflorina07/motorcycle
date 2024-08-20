@@ -15,16 +15,24 @@ public class CartController {
     public CartController(CartService cartService) {
         this.cartService = cartService;
     }
+
     @GetMapping
-    public List<Cart> listCart(){
+    public List<Cart> listCart() {
         return cartService.listCart();
     }
+
     @PostMapping
-    public Cart addCart(@RequestBody Cart cart){
+    public Cart addCart(@RequestBody Cart cart) {
         return cartService.addCart(cart);
     }
+
     @GetMapping("/get/{id}")
-    public Optional<Cart> findCartById(@PathVariable Long id){
+    public Optional<Cart> findCartById(@PathVariable Long id) {
         return cartService.findCartById(id);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteCartById(@PathVariable Long id) {
+        cartService.deleteCarById(id);
     }
 }

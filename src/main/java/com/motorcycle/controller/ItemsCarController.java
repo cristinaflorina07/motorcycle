@@ -32,4 +32,9 @@ public class ItemsCarController {
     public Optional<ItemsCar> findItemsCarById(@PathVariable Long id) {
         return itemsCarService.findItemsCarById(id);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteItemsCarById(@PathVariable Long id) {
+        itemsCarService.deleteItemsCarById(id);
+    }
 }

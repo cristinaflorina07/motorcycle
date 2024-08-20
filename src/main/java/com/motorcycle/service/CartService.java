@@ -15,14 +15,21 @@ public class CartService {
     public CartService(CartRepository cartRepository) {
         this.cartRepository = cartRepository;
     }
-    public Cart addCart(Cart cart){
+
+    public Cart addCart(Cart cart) {
         return cartRepository.save(cart);
     }
-    public List<Cart> listCart(){
+
+    public List<Cart> listCart() {
         return cartRepository.findAll();
     }
-    public Optional<Cart> findCartById(Long id){
+
+    public Optional<Cart> findCartById(Long id) {
         return cartRepository.findById(id);
+    }
+
+    public void deleteCarById(Long id) {
+        cartRepository.deleteById(id);
     }
 
 }

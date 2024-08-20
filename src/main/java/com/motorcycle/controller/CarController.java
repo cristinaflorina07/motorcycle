@@ -31,5 +31,10 @@ public class CarController {
         return carService.findCarbyId(id);
 
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteCarById(@PathVariable Long id) {
+        carService.deleteCarById(id);
+    }
 }
 

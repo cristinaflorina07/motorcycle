@@ -1,8 +1,7 @@
 package com.motorcycle.controller;
 
-import com.motorcycle.entity.Motorcycle;
 import com.motorcycle.entity.RegisterUser;
-import com.motorcycle.service.RegisterService;
+import com.motorcycle.service.RegisterUserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,10 +9,10 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/register")
-public class RegisterController {
-    private final RegisterService registerService;
+public class RegisterUserController {
+    private final RegisterUserService registerService;
 
-    public RegisterController(RegisterService registerService) {
+    public RegisterUserController(RegisterUserService registerService) {
         this.registerService = registerService;
     }
 
@@ -30,5 +29,10 @@ public class RegisterController {
     @GetMapping("/get/{id}")
     public Optional<RegisterUser> findRegisterUserById(@PathVariable Long id) {
         return registerService.findRegisterUserById(id);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteRegisterUserById(@PathVariable Long id) {
+        registerService.deleteRegisterById(id);
     }
 }

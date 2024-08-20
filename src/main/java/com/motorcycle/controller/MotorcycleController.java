@@ -31,5 +31,10 @@ public class MotorcycleController {
     public ResponseEntity<Motorcycle> addMotorcycle(@RequestBody Motorcycle motorcycle) {
         return motorcycleService.addMotorcycle(motorcycle);
     }
+    @DeleteMapping("/delete/{id}")
+    public void deleteMotorcycle(@PathVariable Long id){
+        motorcycleService.deleteMotorcycleById(id);
+    }
+
 
 }

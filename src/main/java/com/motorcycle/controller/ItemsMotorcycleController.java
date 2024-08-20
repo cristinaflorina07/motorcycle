@@ -21,17 +21,24 @@ public class ItemsMotorcycleController {
 
     @GetMapping("/getmotorcycleitem")
     public List<ItemsMotorcycle> getAllMotorcycleItems() {
-        return itemsMotorcycleService.getAllMotorcycleItems();
+        return itemsMotorcycleService.getAllItemsMotorcycle();
     }
 
 
     @PostMapping("/addmotorcycleitem")
-    public ItemsMotorcycle addNewMotorcycleItem(@RequestBody ItemsMotorcycle itemsMotorcycle) {
-        return itemsMotorcycleService.addNewMotorcycleItem(itemsMotorcycle);
+    public ItemsMotorcycle addNewItemsMotorcycle(@RequestBody ItemsMotorcycle itemsMotorcycle) {
+        return itemsMotorcycleService.addNewItemsMotorcycle(itemsMotorcycle);
     }
+//
+//    @DeleteMapping("/delete/{id}")
+//    public void deleteItemsMotorcycleById(@PathVariable Long id) {
+//        itemsMotorcycleService.deleteItemsMotorcycleById(id);
+//    }
+
 
 //    @GetMapping("/get/{id}")
 //    public Optional<ItemsMotorcycle> findItemsMotorcycleById(@PathVariable Long id) {
 //        return itemsMotorcycleService.findItemsMotorcycleById(id);
 //    }
 }
+

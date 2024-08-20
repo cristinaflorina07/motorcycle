@@ -36,7 +36,11 @@ public class MotorcycleService {
         return motorcycleRepository.findAll();
     }
 
+    public void deleteMotorcycleById(Long id) {
+        motorcycleRepository.deleteById(id);
     }
+
+}
 
 
 

@@ -22,15 +22,18 @@ public class ItemsMotorcycleService {
     }
 
 
-    public ItemsMotorcycle addNewMotorcycleItem(ItemsMotorcycle itemsMotorcycle) {
+    public ItemsMotorcycle addNewItemsMotorcycle(ItemsMotorcycle itemsMotorcycle) {
         return itemsMotorcycleRepository.save(itemsMotorcycle);
     }
 
-    public List<ItemsMotorcycle> getAllMotorcycleItems() {
+    public List<ItemsMotorcycle> getAllItemsMotorcycle() {
         return itemsMotorcycleRepository.findAll();
     }
 
     public Optional<ItemsMotorcycle> findItemsMotorcycleById(Long id) {
         return itemsMotorcycleRepository.findById(id);
+    }
+    public void deleteItemsMotorcycleById (Long id){
+        itemsMotorcycleRepository.deleteById(id);
     }
 }
